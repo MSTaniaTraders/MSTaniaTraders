@@ -1,1 +1,684 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>মেসার্স তানিয়া ট্রেডার্স | M/S Tania Traders</title>
+  <meta name="description" content="মেসার্স তানিয়া ট্রেডার্স - মানসম্মত ভারী নির্মাণ সামগ্রী এবং আধুনিক কনস্ট্রাকশন কেমিক্যাল সমাধান। কাহালু, বগুড়া।" />
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <style>
+    :root {
+      --primary: #c2410c; /* Industrial Construction Orange */
+      --primary-dark: #9a3412;
+      --secondary: #0f172a; /* Solid Slate Charcoal */
+      --accent: #0284c7; /* Chemical / Trust Blue */
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --whatsapp-color: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--secondary);
+      color: #94a3b8;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .top-bar a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 12px;
+      transition: color 0.2s;
+    }
+    .top-bar a:hover {
+      color: #fff;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--secondary);
+    }
+    .brand img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    .brand-text h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .nav-cta {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 16px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-cta:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Hero Slider */
+    .hero-slider {
+      position: relative;
+      height: 460px;
+      overflow: hidden;
+      background: var(--secondary);
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      display: flex;
+      align-items: center;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.35);
+    }
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      max-width: 680px;
+      padding: 20px;
+    }
+    .slide-badge {
+      display: inline-block;
+      background: rgba(194, 65, 12, 0.9);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .slide-content h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+    .slide-content p {
+      font-size: 1.05rem;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+    }
+    .hero-btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #ffffff;
+    }
+    .btn-outline:hover {
+      background: #fff;
+      color: var(--secondary);
+    }
+
+    /* Slider Controls */
+    .slider-nav {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .dot.active {
+      background: var(--primary);
+      width: 28px;
+      border-radius: 8px;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 60px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title span {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-title h3 {
+      font-size: 1.9rem;
+      color: var(--secondary);
+      font-weight: 700;
+      margin-top: 6px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 8px auto 0;
+      font-size: 0.95rem;
+    }
+
+    /* Products Grid */
+    .category-block {
+      margin-bottom: 40px;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    .category-header h4 {
+      font-size: 1.35rem;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+    .category-header.chem {
+      border-left-color: var(--accent);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
+    .product-icon {
+      width: 56px;
+      height: 56px;
+      background: #fff7ed;
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.5rem;
+    }
+    .product-icon.chem-icon {
+      background: #f0f9ff;
+      color: var(--accent);
+    }
+    .product-card h5 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--secondary);
+    }
+    .product-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* Owner Section */
+    .owner-section {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .owner-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      align-items: center;
+    }
+    .owner-img-wrapper {
+      height: 100%;
+      min-height: 320px;
+      background: #e2e8f0;
+    }
+    .owner-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .owner-content {
+      padding: 36px;
+    }
+    .owner-badge {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .owner-content h4 {
+      font-size: 1.6rem;
+      color: var(--secondary);
+      margin: 4px 0 14px;
+    }
+    .quote-box {
+      font-size: 1rem;
+      color: #334155;
+      position: relative;
+      padding-left: 24px;
+      border-left: 3px solid var(--primary);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    
+    /* Visiting Card Section */
+    .visiting-card-box {
+      margin-top: 36px;
+      text-align: center;
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px dashed #cbd5e1;
+    }
+    .visiting-card-box h5 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--secondary);
+    }
+    .vc-image-container {
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .vc-image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .contact-box {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-box i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+    .contact-box h5 {
+      font-size: 1.05rem;
+      color: var(--secondary);
+      margin-bottom: 6px;
+    }
+    .contact-box p, .contact-box a {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: block;
+    }
+    .contact-box a:hover {
+      color: var(--primary);
+    }
+
+    /* Floating WhatsApp Button */
+    .float-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--whatsapp-color);
+      color: #fff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .float-wa:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: #94a3b8;
+      padding: 40px 0 20px;
+      font-size: 0.9rem;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      margin-top: 30px;
+      padding-top: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .nav-links { display: none; }
+      .hero-slider { height: 420px; }
+      .slide-content h2 { font-size: 1.6rem; }
+      .slide-content p { font-size: 0.95rem; }
+      .owner-grid { grid-template-columns: 1fr; }
+      .owner-img-wrapper { height: 260px; }
+      .owner-content { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div>
+        <i class="fa-solid fa-location-dot"></i> বিবিরপুকুর বাজার, কাহালু, বগুড়া
+      </div>
+      <div>
+        <i class="fa-solid fa-phone"></i> 01712192618, 01713712336
+        <a href="mailto:mstaniatradersbogura@gmail.com"><i class="fa-solid fa-envelope"></i> ইমেইল করুন</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="brand">
+        <img src="taniatraderslogo.png" alt="M/S Tania Traders Logo" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <h1>মেসার্স তানিয়া ট্রেডার্স</h1>
+          <span>M/S TANIA TRADERS</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">হোম</a></li>
+        <li><a href="#products">পণ্যসামগ্রী</a></li>
+        <li><a href="#owner">প্রোপাইটর</a></li>
+        <li><a href="#contact">যোগাযোগ</a></li>
+        <li><a href="tel:01712192618" class="nav-cta"><i class="fa-solid fa-phone-volume"></i> কল করুন</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Slider Section (3 Slides) -->
+  <section class="hero-slider" id="home">
+    
+    <!-- Slide 1: Rod & Cement -->
+    <div class="slide active">
+      <img src="slide1.jpg" alt="রড ও সিমেন্ট" class="slide-bg" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1200&q=80'" />
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-badge">ভারী নির্মাণ সামগ্রী</span>
+          <h2>টেকসই নির্মাণের বিশ্বস্ত রড ও সিমেন্ট</h2>
+          <p>বিএসআরএম, একেএস সহ দেশের সেরা ব্র্যান্ডের রড এবং ফ্রেশ কোয়ালিটির সিমেন্ট সরবরাহ করছি পাইকারি ও খুচরা মূল্যে।</p>
+          <div class="hero-btn-group">
+            <a href="tel:01712192618" class="btn btn-primary"><i class="fa-solid fa-phone"></i> সরাসরি অর্ডার করুন</a>
+            <a href="https://wa.me/8801712192618" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> হোয়াটসঅ্যাপ ইনকোয়ারি</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Construction Chemicals -->
+    <div class="slide">
+      <img src="slide2.jpg" alt="কনস্ট্রাকশন কেমিক্যাল" class="slide-bg" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80'" />
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-badge">স্পেশাল কেমিক্যালস</span>
+          <h2>ভবনের স্থায়ী সুরক্ষায় আধুনিক কেমিক্যাল সমাধান</h2>
+          <p>ছাদ ও দেয়ালের ড্যাম্প বা নোনা প্রতিরোধে উন্নত ওয়াটারপ্রুফিং কেমিক্যাল, কনক্রিট অ্যাডমিক্সচার এবং ফ্লোর হার্ডেনার।</p>
+          <div class="hero-btn-group">
+            <a href="https://wa.me/8801713712336" target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> কেমিক্যাল তথ্য জানুন</a>
+            <a href="#products" class="btn btn-outline">প্রোডাক্ট তালিকা দেখুন</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Brick, Sand & Stone -->
+    <div class="slide">
+      <img src="slide3.jpg" alt="ইট, বালু ও পাথর" class="slide-bg" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80'" />
+      <div class="container">
+        <div class="slide-content">
+          <span class="slide-badge">বুনিয়াদি নির্মাণ</span>
+          <h2>গুণগত মানের ১ নম্বর ইট, লাল বালু ও পাথর</h2>
+          <p>নির্মাণ কাজের শুরু থেকেই মজবুত ভিত্তির জন্য নিশ্চিত মানের অটো ও সাধারণ ইট, সিলেট বালু ও ভাঙা পাথর সরাসরি সাইটে ডেলিভারি।</p>
+          <div class="hero-btn-group">
+            <a href="tel:01713715545" class="btn btn-primary"><i class="fa-solid fa-truck"></i> ডেলিভারির জন্য কল করুন</a>
+            <a href="#contact" class="btn btn-outline">ঠিকানা ও লোকেশন</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Navigation Dots -->
+    <div class="slider-nav">
+      <div class="dot active" onclick="setSlide(0)"></div>
+      <div class="dot" onclick="setSlide(1)"></div>
+      <div class="dot" onclick="setSlide(2)"></div>
+    </div>
+  </section>
+
+  <!-- Products & Services Section -->
+  <section id="products">
+    <div class="container">
+      <div class="section-title">
+        <span>আমাদের সরবরাহসমূহ</span>
+        <h3>নির্মাণ সামগ্রী ও কেমিক্যাল সলিউশন</h3>
+        <p>ব্যক্তিগত বাড়ি নির্মাণ বা বড় প্রজেক্ট—আমরা দিচ্ছি শতভাগ নির্ভরযোগ্য ও যাচাইকৃত পণ্য সরাসরি সাইটে পৌঁছে দেওয়ার নিশ্চয়তা।</p>
+      </div>
+
+      <!-- Category 1: Heavy Materials -->
+      <div class="category-block">
+        <div class="category-header">
+          <h4>ভারী নির্মাণ সামগ্রী</h4>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-icon"><i class="fa-solid fa-bars-staggered"></i></div>
+            <h5>উন্নত রড (Rebar)</h5>
+            <p>৫০০W ও গ্রেড ৬০ মানের দেশের সেরা ব্র্যান্ডের রড।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+            <h5>সিমেন্ট (Cement)</h5>
+            <p>পিসিসি ও ওপিসি ফ্রেশ ব্যাচের মানসম্পন্ন সিমেন্ট।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon"><i class="fa-solid fa-cube"></i></div>
+            <h5>ইট (Bricks)</h5>
+            <p>১ম শ্রেণির পাকা অটো ও ফিল্ডের সেরা ইট।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon"><i class="fa-solid fa-hill-rockslide"></i></div>
+            <h5>বালু ও পাথর (Sand & Stone)</h5>
+            <p>সিলেট বালু, ভিটি বালু ও ঢালাই উপযোগী বোল্ডার পাথর।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Special Chemicals -->
+      <div class="category-block">
+        <div class="category-header chem">
+          <h4>স্পেশাল কেমিক্যালস</h4>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-icon chem-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h5>ওয়াটারপ্রুফিং কেমিক্যাল</h5>
+            <p>ছাদ, বাথরুম ও বেজমেন্টের পানির লিকেজ ও ড্যাম্প বন্ধ করতে কার্যকর সমাধান।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon chem-icon"><i class="fa-solid fa-vial"></i></div>
+            <h5>কনক্রিট অ্যাডমিক্সচার</h5>
+            <p>ঢালাই দ্রুত শক্ত ও পানি নিরোধক করতে উচ্চমানের কেমিক্যাল।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon chem-icon"><i class="fa-solid fa-fill-drip"></i></div>
+            <h5>নন-শ্রিঙ্ক গ্রাউট</h5>
+            <p>মেশিন ফাউন্ডেশন এবং বিম-কলামের ক্র্যাক রিপেয়ারের গ্রাউটিং সামগ্রী।</p>
+          </div>
+          <div class="product-card">
+            <div class="product-icon chem-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h5>ফ্লোর হার্ডেনার</h5>
+            <p>ফ্যাক্টরি, গ্যারেজ ও গোডাউনের মেঝেকে মসৃণ ও ভারী লোড প্রতিরোধী করতে।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner & Message Section -->
+  <section id="owner" style="background-color: #f1f5f9;">
+    <div class="container">
+      <div class="owner-section">
+        <div class="owner-grid">
+          <div class="owner-img-wrapper">
+            <img src="Ownertaniatraders.jpg" alt="মোঃ মোজাম্মেল হোসেন - প্রোপাইটর" onerror="this.src='https://placehold.co/400x500/1e293b/ffffff?text=Owner+Photo'" />
+          </div>
+          <div class="owner-content">
+            <span class="owner-badge">প্রোপাইটরের বার্তা</span>
+            <h4>মোঃ মোজাম্মেল হোসেন</h4>
+            <p style="color: var(--text-muted); margin-bottom: 12px; font-weight: 500;">প্রোপাইটর, মেসার্স তানিয়া ট্রেডার্স</p>
+            <div class="quote-box">
+              "সততা এবং গুণগত মানই আমাদের ব্যবসার মূল ভিত্তি। দীর্ঘদিনের অভিজ্ঞতা নিয়ে আমরা মেসার্স তানিয়া ট্রেডার্স পরিবার গ্রাহকের স্বপ্নের স্থাপনা মজবুত ও সুরক্ষিত রাখতে সেরা মানের রড, সিমেন্ট এবং আধুনিক নির্মাণ কেমিক্যাল সরবরাহ করে আসছি। কাহালু, বগুড়া সহ আশেপাশের সকল ক্রেতা ও ঠিকাদারদের শতভাগ খাঁটি পণ্য ও দ্রুত ডেলিভারির নিশ্চয়তা দেওয়াই আমাদের অঙ্গীকার।"
+            </div>
+            <p style="font-size: 0.95rem; color: v
